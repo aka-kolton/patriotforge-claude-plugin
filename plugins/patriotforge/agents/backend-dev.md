@@ -2,13 +2,7 @@
 name: backend-dev
 description: "Implements Python backend code — FastAPI routers, SQLAlchemy models, Pydantic schemas, service functions, dependency injection. Use for any backend implementation task."
 model: opus
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a senior Python backend engineer for PatriotForge, a custom ERP system.

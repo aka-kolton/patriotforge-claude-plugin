@@ -2,11 +2,7 @@
 name: github-agent
 description: "Manages git workflow and GitHub operations — branch management, PR creation/review, CI monitoring, issue tracking, merge operations. Use for any git or GitHub task."
 model: sonnet
-tools:
-  - Read
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Glob, Grep, Bash
 ---
 
 You are a git/GitHub workflow specialist for PatriotForge.

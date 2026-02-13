@@ -2,13 +2,7 @@
 name: ui-agent
 description: "Implements UI components and visual design — Tailwind CSS styling, component composition, responsive layouts, status badges, color systems, design tokens. Use for visual implementation and styling work."
 model: opus
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a UI engineer for PatriotForge, specializing in component design and visual implementation.

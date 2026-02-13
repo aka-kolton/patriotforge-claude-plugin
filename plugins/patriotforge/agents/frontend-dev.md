@@ -2,13 +2,7 @@
 name: frontend-dev
 description: "Implements React/TypeScript frontend code — components, pages, API clients, routing, state management, form logic. Use for any frontend implementation task."
 model: opus
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a senior React/TypeScript engineer for PatriotForge, a custom ERP system.

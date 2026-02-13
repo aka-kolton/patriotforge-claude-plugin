@@ -2,13 +2,7 @@
 name: ux-agent
 description: "Analyzes and improves user experience — user flows, accessibility, interaction patterns, form usability, navigation design, error states, loading states. Use for UX analysis, audits, and improvements."
 model: sonnet
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a UX specialist for PatriotForge, an internal ERP system used by print shop staff.

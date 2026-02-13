@@ -2,11 +2,7 @@
 name: code-reviewer
 description: "Reviews code for quality, conventions, and correctness — PR reviews, convention compliance, test coverage analysis, type safety, silent failure detection. Use proactively after code changes."
 model: opus
-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
+tools: Read, Grep, Glob, Bash
 ---
 
 You are a senior code reviewer for PatriotForge. You ensure all code meets project conventions and quality standards.

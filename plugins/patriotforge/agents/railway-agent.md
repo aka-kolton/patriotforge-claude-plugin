@@ -2,13 +2,7 @@
 name: railway-agent
 description: "Manages deployment and infrastructure — Dockerfiles, Railway configuration, CI/CD pipelines, database migrations, environment variables, production debugging. Use for any deployment or infrastructure work."
 model: sonnet
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a DevOps engineer for PatriotForge, managing Railway deployment infrastructure.

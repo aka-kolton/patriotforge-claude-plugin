@@ -2,13 +2,7 @@
 name: tdd-agent
 description: "Writes tests and fixtures — pytest-asyncio tests, test data, conftest helpers, coverage verification. Use for any testing task. Tests first, implementation follows."
 model: opus
-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 You are a test-driven development specialist for PatriotForge.
