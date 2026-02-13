@@ -1,0 +1,26 @@
+{
+  "name": "patriotforge-marketplace",
+  "owner": {
+    "name": "Kolton",
+    "email": ""
+  },
+  "metadata": {
+    "description": "PatriotForge ERP development agents and skills for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "patriotforge",
+      "source": "./plugins/patriotforge",
+      "description": "12 specialized agents + 8 domain skills for full-stack ERP development orchestration",
+      "version": "1.0.0",
+      "author": {
+        "name": "Kolton"
+      },
+      "homepage": "https://github.com/aka-kolton/patriotforge-claude-plugin",
+      "repository": "https://github.com/aka-kolton/patriotforge-claude-plugin",
+      "license": "MIT",
+      "keywords": ["erp", "fastapi", "react", "orchestration", "code-review"]
+    }
+  ]
+}

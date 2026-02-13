@@ -36,16 +36,20 @@ Full-stack development orchestration for [PatriotForge ERP](https://github.com/a
 
 ## Installation
 
-### From directory (development)
+### From GitHub (recommended)
 
 ```bash
-claude --plugin-dir /path/to/patriotforge-claude-plugin
+# Step 1: Add the marketplace
+/plugin marketplace add aka-kolton/patriotforge-claude-plugin
+
+# Step 2: Install the plugin
+/plugin install patriotforge@patriotforge-marketplace
 ```
 
-### From GitHub (once published to a marketplace)
+### From local directory (development)
 
 ```bash
-claude plugin install patriotforge
+claude --plugin-dir ./plugins/patriotforge
 ```
 
 ## Usage
@@ -81,29 +85,33 @@ This plugin is built for the PatriotForge ERP tech stack:
 ```
 patriotforge-claude-plugin/
 ├── .claude-plugin/
-│   └── plugin.json         # Plugin manifest
-├── agents/                  # 12 specialized agents
-│   ├── patriotdevbot.md
-│   ├── backend-dev.md
-│   ├── database-dev.md
-│   ├── api-dev.md
-│   ├── tdd-agent.md
-│   ├── frontend-dev.md
-│   ├── ui-agent.md
-│   ├── ux-agent.md
-│   ├── security-reviewer.md
-│   ├── code-reviewer.md
-│   ├── railway-agent.md
-│   └── github-agent.md
-├── skills/                  # 8 domain skills
-│   ├── backend/SKILL.md
-│   ├── frontend/SKILL.md
-│   ├── database/SKILL.md
-│   ├── api/SKILL.md
-│   ├── security/SKILL.md
-│   ├── tdd/SKILL.md
-│   ├── code-review/SKILL.md
-│   └── deploy/SKILL.md
+│   └── marketplace.json       # Marketplace catalog
+├── plugins/
+│   └── patriotforge/
+│       ├── .claude-plugin/
+│       │   └── plugin.json    # Plugin manifest
+│       ├── agents/            # 12 specialized agents
+│       │   ├── patriotdevbot.md
+│       │   ├── backend-dev.md
+│       │   ├── database-dev.md
+│       │   ├── api-dev.md
+│       │   ├── tdd-agent.md
+│       │   ├── frontend-dev.md
+│       │   ├── ui-agent.md
+│       │   ├── ux-agent.md
+│       │   ├── security-reviewer.md
+│       │   ├── code-reviewer.md
+│       │   ├── railway-agent.md
+│       │   └── github-agent.md
+│       └── skills/            # 8 domain skills
+│           ├── backend/SKILL.md
+│           ├── frontend/SKILL.md
+│           ├── database/SKILL.md
+│           ├── api/SKILL.md
+│           ├── security/SKILL.md
+│           ├── tdd/SKILL.md
+│           ├── code-review/SKILL.md
+│           └── deploy/SKILL.md
 ├── README.md
 ├── CHANGELOG.md
 └── LICENSE
