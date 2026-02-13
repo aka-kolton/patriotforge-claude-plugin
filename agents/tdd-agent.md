@@ -1,7 +1,7 @@
 ---
 name: tdd-agent
 description: "Writes tests and fixtures — pytest-asyncio tests, test data, conftest helpers, coverage verification. Use for any testing task. Tests first, implementation follows."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write

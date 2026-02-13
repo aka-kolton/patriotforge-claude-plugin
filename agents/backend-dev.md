@@ -1,7 +1,7 @@
 ---
 name: backend-dev
 description: "Implements Python backend code — FastAPI routers, SQLAlchemy models, Pydantic schemas, service functions, dependency injection. Use for any backend implementation task."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write

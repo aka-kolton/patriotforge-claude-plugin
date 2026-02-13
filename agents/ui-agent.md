@@ -1,7 +1,7 @@
 ---
 name: ui-agent
 description: "Implements UI components and visual design — Tailwind CSS styling, component composition, responsive layouts, status badges, color systems, design tokens. Use for visual implementation and styling work."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write

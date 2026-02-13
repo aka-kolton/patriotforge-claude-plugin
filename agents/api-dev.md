@@ -1,7 +1,7 @@
 ---
 name: api-dev
 description: "Designs API contracts — Pydantic request/response schemas, endpoint signatures, middleware configuration, pagination, error responses, integration contracts. Use for API design and schema work."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write

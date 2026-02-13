@@ -1,7 +1,7 @@
 ---
 name: database-dev
 description: "Designs and implements database changes — SQLAlchemy models, Alembic migrations, schema design, constraints, indexes, cross-dialect compatibility. Use for any database or migration work."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write

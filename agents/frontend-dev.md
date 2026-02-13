@@ -1,7 +1,7 @@
 ---
 name: frontend-dev
 description: "Implements React/TypeScript frontend code — components, pages, API clients, routing, state management, form logic. Use for any frontend implementation task."
-model: sonnet
+model: opus
 tools:
   - Read
   - Write
