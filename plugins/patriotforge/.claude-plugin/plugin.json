@@ -1,6 +1,6 @@
 {
   "name": "patriotforge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Full-stack development orchestration for PatriotForge ERP — 12 specialized agents and 8 domain skills covering backend, frontend, database, API, security, testing, deployment, and code review.",
   "author": {
     "name": "Kolton",
