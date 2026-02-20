@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0 (2026-02-19)
+
+### Added
+- **scout** agent (haiku) — fast, cheap investigative agent for codebase recon, server SSH, Railway status, and web research. Designed to run 3-5 in parallel for broad coverage.
+- **planner** agent (sonnet) — deep analysis and architecture planning agent. Synthesizes scout findings into phased implementation plans following PatriotForge conventions.
+- **plan** skill — investigative planning pipeline: dispatches scouts (haiku) for fast recon, then planners (sonnet) for architecture. Covers local codebase, server, Railway, and external API research. Saves plans to Obsidian logbook.
+
 ## 1.1.0 (2026-02-19)
 
 ### Added

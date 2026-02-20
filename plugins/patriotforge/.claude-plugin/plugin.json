@@ -1,7 +1,7 @@
 {
   "name": "patriotforge",
-  "version": "1.1.0",
-  "description": "Full-stack development orchestration for PatriotForge ERP — 12 specialized agents and 9 domain skills covering backend, frontend, database, API, security, testing, deployment, code review, and automated shipping.",
+  "version": "1.2.0",
+  "description": "Full-stack development orchestration for PatriotForge ERP — 14 specialized agents and 10 domain skills covering backend, frontend, database, API, security, testing, deployment, code review, automated shipping, and investigative planning.",
   "author": {
     "name": "Kolton",
     "url": "https://github.com/aka-kolton"

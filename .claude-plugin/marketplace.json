@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "PatriotForge ERP development agents and skills for Claude Code",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "patriotforge",
       "source": "./plugins/patriotforge",
-      "description": "12 specialized agents + 9 domain skills for full-stack ERP development orchestration",
-      "version": "1.1.0",
+      "description": "14 specialized agents + 10 domain skills for full-stack ERP development orchestration",
+      "version": "1.2.0",
       "author": {
         "name": "Kolton"
       },
