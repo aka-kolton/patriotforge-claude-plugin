@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0 (2026-02-19)
+
+### Added
+- **debug** skill — production triage pipeline: dispatches 4-6 scouts in parallel to check server logs, container health, database state, recent deploys, network connectivity, and codebase for root cause analysis
+- **qa** skill — live browser testing with Playwright MCP: walks through 8 user flows (login, dashboard, customers, quotes, orders, production, navigation, settings), catches console errors, network failures, broken UI, and logs bugs with steps to reproduce
+- **gitleaks** v8.30.0 added to ship skill's Agent 5 for secrets detection (completes full CI parity)
+
+### Changed
+- **patriotdevbot** updated: added scout + planner to agent roster, replaced manual 5-step validate/review loop with /ship pipeline, uses scout instead of Explore for PatriotForge-aware lookups
+
 ## 1.2.0 (2026-02-19)
 
 ### Added

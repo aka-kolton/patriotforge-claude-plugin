@@ -1,10 +1,10 @@
 # PatriotForge Claude Code Plugin
 
-Full-stack development orchestration for [PatriotForge ERP](https://github.com/aka-kolton/patriotforge) — 12 specialized agents and 8 domain skills for Claude Code.
+Full-stack development orchestration for [PatriotForge ERP](https://github.com/aka-kolton/patriotforge) — 14 specialized agents and 12 domain skills for Claude Code.
 
 ## What's Included
 
-### 12 Specialized Agents
+### 14 Specialized Agents
 
 | Agent | Model | Role |
 |-------|-------|------|
@@ -20,10 +20,12 @@ Full-stack development orchestration for [PatriotForge ERP](https://github.com/a
 | **code-reviewer** | opus | Convention compliance, quality review, silent failure detection (read-only) |
 | **railway-agent** | sonnet | Docker, Railway deployment, CI/CD, database migrations |
 | **github-agent** | sonnet | Git workflow, PR creation, branch management, CI monitoring |
+| **scout** | haiku | Fast codebase/server/Railway recon — run 3-5 in parallel for broad coverage |
+| **planner** | sonnet | Deep architecture analysis, phased implementation plans |
 
-### 8 Domain Skills
+### 12 Domain Skills
 
-| Skill | Loaded When |
+| Skill | When to Use |
 |-------|-------------|
 | **backend** | Writing FastAPI routers, services, config |
 | **frontend** | Writing React components, pages, styling |
@@ -33,6 +35,22 @@ Full-stack development orchestration for [PatriotForge ERP](https://github.com/a
 | **tdd** | Writing tests, fixtures, coverage |
 | **code-review** | Reviewing PRs, auditing code quality |
 | **deploy** | Docker, CI/CD, Railway deployment |
+| **ship** | Commit, 5-agent review swarm (ruff, eslint, tsc, mypy, bandit, pip-audit, npm audit, trivy, gitleaks), auto-fix loop, merge |
+| **plan** | Investigate and plan features — scouts (haiku) for recon, planners (sonnet) for architecture |
+| **debug** | Production triage — parallel scouts check logs, containers, DB, deploys, network |
+| **qa** | Live browser testing with Playwright MCP — walks user flows, catches console errors, network failures, logs bugs |
+
+## Workflow
+
+The full development lifecycle:
+
+```
+/patriotforge:plan <feature>     →  scouts investigate, planner produces phased plan
+patriotdevbot executes plan      →  dispatches agents per phase, commits as it goes
+/patriotforge:ship               →  commit, 5-agent review swarm, fix loop, merge
+/patriotforge:qa                 →  live browser testing, bug detection
+/patriotforge:debug <symptom>    →  parallel triage when something breaks
+```
 
 ## Installation
 
@@ -57,14 +75,20 @@ claude --plugin-dir ./plugins/patriotforge
 After installation, agents and skills are namespaced under `patriotforge:`:
 
 ```
-# Invoke a skill directly
-/patriotforge:backend
+# Investigate and plan a feature
+/patriotforge:plan add Stripe payment processing
 
-# Use an agent
-Use the patriotforge:backend-dev agent to implement the new router
+# Run the orchestrator on an existing plan
+Use the patriotforge:patriotdevbot agent to implement the plan
 
-# Run the orchestrator
-Use the patriotforge:patriotdevbot agent to implement the plan at /path/to/plan.md
+# Ship when done — commit, review, fix, merge
+/patriotforge:ship feat: add payment webhooks
+
+# Live test the deployed app
+/patriotforge:qa full
+
+# Debug a production issue
+/patriotforge:debug "500 errors on invoice page"
 ```
 
 ## Tech Stack
@@ -80,6 +104,23 @@ This plugin is built for the PatriotForge ERP tech stack:
 | Auth | Redis sessions, Argon2 passwords, TOTP MFA |
 | Deployment | Railway, Docker, GitHub Actions CI |
 
+## Local Security Tools
+
+The `/ship` skill runs a full CI-equivalent locally:
+
+| Tool | Version | What it checks |
+|------|---------|---------------|
+| ruff | system | Python lint + format |
+| mypy | venv | Python strict type checking |
+| eslint | npm | TypeScript/React lint |
+| tsc | npm | TypeScript type checking |
+| pytest | venv | Python tests |
+| bandit | venv | Python security patterns |
+| pip-audit | venv | Python dependency CVEs |
+| npm audit | npm | JS dependency CVEs |
+| trivy | 0.69.1 | Filesystem vulnerability scan (HIGH/CRITICAL) |
+| gitleaks | 8.30.0 | Secrets detection in code |
+
 ## Project Structure
 
 ```
@@ -90,7 +131,7 @@ patriotforge-claude-plugin/
 │   └── patriotforge/
 │       ├── .claude-plugin/
 │       │   └── plugin.json    # Plugin manifest
-│       ├── agents/            # 12 specialized agents
+│       ├── agents/            # 14 specialized agents
 │       │   ├── patriotdevbot.md
 │       │   ├── backend-dev.md
 │       │   ├── database-dev.md
@@ -102,8 +143,10 @@ patriotforge-claude-plugin/
 │       │   ├── security-reviewer.md
 │       │   ├── code-reviewer.md
 │       │   ├── railway-agent.md
-│       │   └── github-agent.md
-│       └── skills/            # 8 domain skills
+│       │   ├── github-agent.md
+│       │   ├── scout.md
+│       │   └── planner.md
+│       └── skills/            # 12 domain skills
 │           ├── backend/SKILL.md
 │           ├── frontend/SKILL.md
 │           ├── database/SKILL.md
@@ -111,7 +154,11 @@ patriotforge-claude-plugin/
 │           ├── security/SKILL.md
 │           ├── tdd/SKILL.md
 │           ├── code-review/SKILL.md
-│           └── deploy/SKILL.md
+│           ├── deploy/SKILL.md
+│           ├── ship/SKILL.md
+│           ├── plan/SKILL.md
+│           ├── debug/SKILL.md
+│           └── qa/SKILL.md
 ├── README.md
 ├── CHANGELOG.md
 └── LICENSE

@@ -172,8 +172,15 @@ Run ALL of these from D:/PatriotForge/:
    trivy fs D:/PatriotForge --severity HIGH,CRITICAL --format json 2>&1 || C:/Users/Kolton/AppData/Local/Microsoft/WinGet/Packages/AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe/trivy.exe fs D:/PatriotForge --severity HIGH,CRITICAL --format json 2>&1
    If neither trivy command works, output: INFO | trivy | LOW | Trivy not found — reinstall with winget install AquaSecurity.Trivy | Reinstall trivy
 
+5. Gitleaks (secrets detection) — scan for leaked secrets in the PR diff:
+   gitleaks detect --source D:/PatriotForge --no-banner --report-format json 2>&1 || C:/Users/Kolton/AppData/Local/Microsoft/WinGet/Packages/Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe/gitleaks.exe detect --source D:/PatriotForge --no-banner --report-format json 2>&1
+   Gitleaks flags: API keys, tokens, passwords, private keys, connection strings in code.
+   IMPORTANT: Only report findings in files changed by this PR.
+   If neither gitleaks command works, output: INFO | gitleaks | LOW | Gitleaks not found — reinstall with winget install Gitleaks.Gitleaks | Reinstall gitleaks
+
 For bandit findings: output one ISSUE line per finding in changed files.
 For dependency audit findings: output one ISSUE line per vulnerable package.
+For gitleaks findings: output one ISSUE line per leaked secret — ALWAYS CRITICAL severity.
 
 Output format per issue:
 ISSUE | <file-or-package>:<line-or-version> | <CRITICAL|HIGH|MEDIUM|LOW> | <description> | <suggested fix>
