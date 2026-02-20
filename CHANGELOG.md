@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.0 (2026-02-19)
+
+### Added
+- **ship** skill — automated shipping pipeline: commit, 5-agent parallel review swarm, auto-fix loop, merge
+  - Agent 1: Lint, Format & Types (ruff, eslint, tsc, mypy --strict)
+  - Agent 2: Security Review (OWASP top 10, PatriotForge security rules)
+  - Agent 3: Test Analysis (pytest suite, coverage gap detection)
+  - Agent 4: Code Review (logic bugs, convention violations)
+  - Agent 5: Dependency & OWASP Scanning (bandit, pip-audit, npm audit, Trivy)
+- Pre-existing issue filter — only flags/fixes issues on lines changed in the PR
+- Auto-fix loop with 3-iteration cap to prevent infinite cycles
+- User confirmation required before merge
+
 ## 1.0.0 (2026-02-13)
 
 ### Added
